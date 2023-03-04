@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Library</h1>
+    <div class="wrapper">
+      <div class="buttons">
+        <button class="addBook">ADD</button>
+        <button>DEL</button>
+      </div>
+    
+     
+      
+      <div class="gridWrapper">
+        <div class="bookCard">
+          <div class="exitbutton">x</div>
+          <h2 class="title">Hobiit</h2>
+          <div class="author">By:michal</div>
+          <div class="pages"># of pages:24</div>
+          <div class="readWrapper">
+            <label for="haveRead">Read</label>
+            <input type="checkbox" checked="checked" id="haveRead" />
+          </div>
+        </div>
+      </div>
+  <!-- form to be displayed on click -->
+      <form action="" method="get" name="bookInfo" id="bookInfo">
+        <label for="bookTitle">Book Title</label>
+        <input type="text" id="bookTitle" name="bookTitle" /><br /><br />
+
+        <label for="author">Authors Name:</label>
+        <input type="text" id="AuthorName" name="authorName" /><br /><br />
+
+        <label for="pageNum">Pages:</label>
+        <input type="number" id="pageNum" name="pageNum" /><br /><br />
+
+        <div class="readWrapper">
+          <label for="read">Have read:</label>
+          <input type="radio" id="haveRead"readname="read" value="true"
+          />yes<br /><br />
+          <input type="radio" id="haveRead" read name="read" value="false"
+          />no<br /><br />
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

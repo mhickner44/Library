@@ -1,0 +1,97 @@
+body {
+  position: relative;
+  background-color: #968569;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+#bookInfo {
+  display:none;
+  position: absolute;
+  right: 40%;
+  top: 20%;
+
+  border: solid 2px black;
+  background-color: white;
+  border-radius: 5px;
+
+  padding: 3rem;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  background-color: #697a96;
+  border-bottom: solid 2px black;
+  height: 20%;
+  width: 100%;
+  font-size: 5rem;
+}
+
+.wrapper {
+  /* display:flex; */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem;
+}
+
+.buttons button {
+  font-size: 2rem;
+  border-radius: 15px;
+  border: 2px solid white;
+  background-color: #697a96;
+  border-color: white;
+  color: white;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  /* grid-auto-rows: ; */
+  /* minmax somewhere */
+  margin: 4rem 4rem;
+}
+
+.bookCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: white;
+  border: solid 4px white;
+  background-color: #697a96;
+
+  font-size: 2rem;
+
+  border-radius: 10px;
+}
+
+.bookCard div {
+  margin: 1.5rem;
+  margin-left: 4rem;
+}
+.bookCard h2 {
+  margin: 1.5rem;
+  margin-left: 4rem;
+}
+.exitbutton {
+  position: absolute;
+  top: 0px;
+  right: 1px;
+}
+
+#haveRead {
+  width: 2rem;
+  height: 2rem;
+}
+.readWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+}
