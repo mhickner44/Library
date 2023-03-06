@@ -75,11 +75,13 @@ h1 {
   margin: 1.5rem;
   margin-left: 4rem;
 }
-.bookCard h2 {
+#title {
   margin: 1.5rem;
   margin-left: 4rem;
+  font-size: 3rem;
+  font-weight: 900;
 }
-.exitbutton {
+.exitButton {
   position: absolute;
   top: 0px;
   right: 1px;
