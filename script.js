@@ -8,6 +8,8 @@ let bookCard = document.querySelector(".bookCard");
 
 let bookGrid = document.querySelector(".gridWrapper");
 
+let currentBook = 0;
+
 function Book(title, author, pages, haveRead) {
   (this.title = title),
     (this.author = author),
@@ -62,7 +64,7 @@ formInput.addEventListener("submit", function (e) {
 function addToLib(bookNum) {
   //this is adding the same book right now
 
-  let currentBook = myLibrary.length - 1;
+  currentBook = myLibrary.length - 1;
 
   const bookCard = document.createElement("div");
   const del = document.createElement("div");
@@ -87,7 +89,7 @@ function addToLib(bookNum) {
     myLibrary[currentBook].title,
     `By: ${myLibrary[currentBook].author}`,
     `# of pages: ${myLibrary[currentBook].pages}`,
-    `Read?: ${myLibrary[currentBook].haveRead}`,
+    `Read?: ${readText(currentBook)}`,
   ];
 
   let nodes = bookInfo.map((book) => {
@@ -107,4 +109,14 @@ function addToLib(bookNum) {
 function removeBook(bookNum) {
   bookNum--;
   myLibrary.splice(bookNum, 1);
+}
+
+function readText(currentBook) {
+  let read;
+  if (myLibrary[currentBook].haveRead == "true") {
+    read = "Yes";
+  } else {
+    read = "No";
+  }
+  return read;
 }
