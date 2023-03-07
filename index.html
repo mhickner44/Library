@@ -10,27 +10,9 @@
   <body>
     <h1>Library</h1>
     <div class="wrapper">
-      <div class="buttons">
-        <button class="addBook">ADD</button>
-        <button>DEL</button>
-      </div>
-    
-     
-      
-      <div class="gridWrapper">
-        <!-- <div class="bookCard">
-        
-          <div id="title">Hobiit</div>
-          <div class="author">By:michal</div>
-          <div class="pages"># of pages:24</div>
-          <div class="readWrapper">
-            <label for="haveRead">Read</label>
-            <input type="checkbox" checked="checked" id="haveRead" />
-          </div>
-          <div class="exitButton">x</div>
-        </div> -->
-      </div> 
-  <!-- form to be displayed on click -->
+      <button class="addBook">ADD</button>
+      <div class="gridWrapper"></div>
+      <!-- form to be displayed on click -->
       <form action="" method="get" name="bookInfo" id="bookInfo">
         <label for="bookTitle">Book Title</label>
         <input type="text" id="bookTitle" name="bookTitle" /><br /><br />
@@ -43,10 +25,8 @@
 
         <div class="readWrapper">
           <label for="read">Have read:</label>
-          <input type="radio" id="haveRead" name="read" value="true"
-          />yes<br /><br />
-          <input type="radio" id="haveRead"  name="read" value="false"
-          />no<br /><br />
+          <input type="radio" id="haveRead" name="read" value="true" />Yes
+          <input type="radio" id="haveRead" name="read" value="false" />no
         </div>
 
         <input type="submit" value="Submit" />
