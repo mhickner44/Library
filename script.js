@@ -53,13 +53,13 @@ formInput.addEventListener("submit", function (e) {
   let book1 = new Book(bookTitle, authorName, pages, haveRead);
 
   addBookToLibrary(book1);
-  addToLib();
+  //pass in the current eleement
+  addToLib(myLibrary.length);
   e.target.reset();
   displayForm();
-  console.log(myLibrary);
 });
 
-function addToLib() {
+function addToLib(bookNum) {
   //this is adding the same book right now
 
   let currentBook = myLibrary.length - 1;
@@ -68,32 +68,26 @@ function addToLib() {
   const del = document.createElement("div");
 
   bookCard.classList.add("bookCard");
-    //remove the dom element
-  bookCard.addEventListener("click", function (e) {
-   //gets its placenemt in the parent element nodelist
-   let gridList= bookGrid.childNodes;
-   var gridArr = Array.prototype.slice.call(gridList); 
-    if (e.target.className == "exitButton"){  this.remove();}
-     removeBook(gridArr.indexOf(e.target));
+  bookCard.id = bookNum;
 
+  //remove the dom element
+  bookCard.addEventListener("click", function (e) {
+    //gets its placenemt in the parent element nodelist
+    let selectedBook = e.target;
+    if (selectedBook.classList == "exitButton") {
+      removeBook(selectedBook.parentNode.id);
+      this.remove();
+    }
   });
 
   del.classList.add("exitButton");
-
   del.innerText = "x";
-
-  let read;
-  if (myLibrary[currentBook].haveRead == "true") {
-    read = "Yes";
-  } else {
-    read = "No";
-  }
 
   let bookInfo = [
     myLibrary[currentBook].title,
     `By: ${myLibrary[currentBook].author}`,
     `# of pages: ${myLibrary[currentBook].pages}`,
-    `Read?: ${read}`,
+    `Read?: ${myLibrary[currentBook].haveRead}`,
   ];
 
   let nodes = bookInfo.map((book) => {
@@ -110,10 +104,7 @@ function addToLib() {
   bookGrid.appendChild(bookCard);
 }
 
-function removeBook(bookNum){
-myLibrary.splice(bookNum,1);
-console.log(myLibrary);
+function removeBook(bookNum) {
+  bookNum--;
+  myLibrary.splice(bookNum, 1);
 }
-
-
-
