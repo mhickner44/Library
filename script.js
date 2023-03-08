@@ -26,7 +26,7 @@ function addBookToLibrary(book) {
 addButton.addEventListener("click", displayForm);
 
 function displayForm() {
-  //if logic
+  
   let formStyles = window.getComputedStyle(formInput);
   let visibility = formStyles.getPropertyValue("display");
 
@@ -41,12 +41,12 @@ function displayForm() {
 formInput.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  //gets the input fields
+  
   let bookTitle = formInput.elements["bookTitle"];
   let authorName = formInput.elements["authorName"];
   let pages = formInput.elements["pageNum"];
   let haveRead = formInput.elements["haveRead"];
-  //gets the values from those fields
+ 
   bookTitle = bookTitle.value;
   authorName = authorName.value;
   pages = pages.value;
@@ -55,14 +55,14 @@ formInput.addEventListener("submit", function (e) {
   let book1 = new Book(bookTitle, authorName, pages, haveRead);
 
   addBookToLibrary(book1);
-  //pass in the current eleement
+  //pass in the current element
   addToLib(myLibrary.length);
   e.target.reset();
   displayForm();
 });
 
 function addToLib(bookNum) {
-  //this is adding the same book right now
+ 
 
   currentBook = myLibrary.length - 1;
 

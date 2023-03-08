@@ -1,6 +1,6 @@
 body {
   position: relative;
-  background-color: #968569;
+  background-color: white;
   margin: 0px;
   font-family: sans-serif;
 }
@@ -21,7 +21,7 @@ body {
 h1 {
   text-align: center;
   margin: 0px;
-  background-color: #697a96;
+  background-color: #8AAAE5;
   border-bottom: solid 2px black;
   height: 20%;
   width: 100%;
@@ -33,7 +33,7 @@ button {
   font-size: 2rem;
   border-radius: 15px;
   border: 2px solid white;
-  background-color: #697a96;
+  background-color: #8AAAE5;
   border-color: white;
   color: white;
   margin: 1rem;
@@ -55,7 +55,7 @@ button {
 
   color: white;
   border: solid 4px white;
-  background-color: #697a96;
+  background-color: #8AAAE5;
 
   font-size: 2rem;
 
