@@ -10,7 +10,6 @@ class book {
     this._haveRead = haveRead;
   }
 
-  //need getters and setters to be able to use the book info
   get getTitle() {
     return this._title;
   }
@@ -36,8 +35,6 @@ class book {
   set setHaveRead(read) {
     return (this._haveRead = read);
   }
-
-  // set
 }
 
 class library {
@@ -58,10 +55,9 @@ class library {
   get getLibrary() {
     return this.library;
   }
-  //probably need to have something that returns a books spot in the array
+ 
 }
 
-//bookcard that can be put on the dom
 
 class bookCard {
   constructor() {
@@ -73,17 +69,15 @@ class bookCard {
     del.innerText = "x";
 
     this.cardElement.append(del);
-
-    this.cardElement.addEventListener("click", removeBook);
+    del.addEventListener("click", removeBook);
   }
 
   //fill the card with the specific book from the array
   fillCard(cardNum, lib) {
-    //get the book from the library and then get the info fromt he book
     let currentBook = lib.getLibrary[cardNum];
 
     let bookInfo = [
-      `title:${currentBook.getTitle}`,
+      `${currentBook.getTitle}`,
       `By: ${currentBook.getAuthor}`,
       `# of pages: ${currentBook.getPages}`,
       `Read?: ${currentBook.getHaveRead}`,
@@ -94,9 +88,10 @@ class bookCard {
       div.textContent = book;
       return div;
     });
-    //need to get
+  
     this.cardElement.append(...nodes);
-    // cardElement.append(del);
+    this.cardElement.children[1].id = "title";
+  
   }
   get getCard() {
     return this.cardElement;
@@ -104,32 +99,12 @@ class bookCard {
 }
 
 
-//display book card to gride in the display controller
-// lib.addBook("LOTR", "tolkein", 69, true);
-// lib.addBook("LOTR sequel", "RR martin", 69, true);
-// console.log(lib.getLibrary[1]);
-// console.log(lib);
-// let bookElement = new bookCard();
-// let bookElement2 = new bookCard();
-// bookElement.fillCard(0, lib);
-// bookElement2.fillCard(1, lib);
-// let card = bookElement.createCard();
 
-// grid.append(bookElement.getCard);
-// grid.append(bookElement2.getCard);
-// lib.removeBook(1);
-
-// removing the bookcard event listener original
-
-function removeBook(){
-//remove book card froim the dom 
-var index = Array.from(grid.children).indexOf(this);
-lib.removeBook(index);
-this.remove();
+function removeBook() {
+  var index = Array.from(grid.children).indexOf(this.parentNode);
+  lib.removeBook(index);
+  this.parentNode.remove();
 }
-
-
-
 
 addButton.addEventListener("click", displayForm);
 
@@ -151,27 +126,21 @@ formInput.addEventListener("submit", function (e) {
   let authorName = formInput.elements["authorName"];
   let pages = formInput.elements["pageNum"];
   let haveRead = formInput.elements["haveRead"];
-  
+
   bookTitle = bookTitle.value;
   authorName = authorName.value;
   pages = pages.value;
   haveRead = haveRead.value;
 
- lib.addBook(bookTitle, authorName, pages, haveRead);
-  let newBookCard =new bookCard();
-  // let book1 = new Book(bookTitle, authorName, pages, haveRead);
-//need the current number to fill it with 
-  //next in the lib to be filled 
-  newBookCard.fillCard(lib.getLibrary.length-1, lib);
+  lib.addBook(bookTitle, authorName, pages, haveRead);
+  let newBookCard = new bookCard();
+
+  newBookCard.fillCard(lib.getLibrary.length - 1, lib);
 
   grid.append(newBookCard.getCard);
 
-  // //pass in the current element
-  // addToLib(myLibrary.length);
   e.target.reset();
   displayForm();
 });
-
-
 
 const lib = new library();
