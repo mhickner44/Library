@@ -15,18 +15,18 @@
       <!-- form to be displayed on click -->
       <form action="" method="get" name="bookInfo" id="bookInfo">
         <label for="bookTitle">Book Title</label>
-        <input type="text" id="bookTitle" name="bookTitle" /><br /><br />
+        <input type="text" id="bookTitle" name="bookTitle"required /><br /><br />
 
         <label for="author">Authors Name:</label>
-        <input type="text" id="AuthorName" name="authorName" /><br /><br />
+        <input type="text" id="AuthorName" name="authorName"  required/><br /><br />
 
         <label for="pageNum">Pages:</label>
-        <input type="number" id="pageNum" name="pageNum" /><br /><br />
+        <input type="number" id="pageNum" name="pageNum" required /><br /><br />
 
         <div class="readWrapper">
-          <label for="read">Have read:</label>
-          <input type="radio" id="haveRead" name="read" value="true" />Yes
-          <input type="radio" id="haveRead" name="read" value="false" />no
+          <label for="read" >Have read:</label>
+          <input type="radio" id="haveRead" name="read" value="true" required/>Yes
+          <input type="radio" id="haveRead" name="read" value="false"  required/>no
         </div>
 
         <input type="submit" value="Submit" />
